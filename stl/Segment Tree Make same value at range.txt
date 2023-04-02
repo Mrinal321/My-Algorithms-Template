@@ -1,0 +1,12 @@
+#define mx 100001
+int arr[mx];
+void init(int b, int e)  // b is lower limit , e is upper limit
+{
+    if (b == e) {
+        arr[b] = 10;
+        return;
+    }
+    int mid = (b + e) / 2;
+    init(b, mid);
+    init(mid + 1, e);
+}

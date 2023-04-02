@@ -1,0 +1,31 @@
+int n, m;
+int dp[100][100];
+
+int fill_grid(int row, int column){
+    if(row > n || row < 1 || column > m || column < 1) return 0;
+
+    if(row == n && column == m){
+        dp[row][column] = 1;
+        return 1;
+    }
+
+    dp[row][column] = fill_grid(row + 1, column) + fill_grid(row, column + 1);
+    return dp[row][column];
+}
+
+
+void solve(){
+    cin >> n >> m;
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= m; j++) dp[i][j] = -1;
+    }
+
+    fill_grid(1,1);
+
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= m; j++){
+            cout << dp[i][j] << " ";
+        }
+        ed
+    }
+}

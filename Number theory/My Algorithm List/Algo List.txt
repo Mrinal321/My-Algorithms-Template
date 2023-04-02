@@ -1,0 +1,20 @@
+1. Greedy
+2. Constractive Algorithm
+3. Number Theory
+ i.Binary Exponentiation
+ ii. LCM & GCD
+ iii. Modulo Arithmetic
+ iv. Prime Factorization
+ v. Sieve
+ vi. Number of Divisors & Sum of Divisors
+
+4. Graph
+ i. DFS
+ ii. BFS
+ iii. Sortest Path
+
+5. Disjoint Set Union(dsu)
+6. String
+ i. Rabin-carp(Hashing-maching)
+ ii. KMP method(Matching)
+ iii. 

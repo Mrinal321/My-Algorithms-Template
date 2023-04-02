@@ -1,0 +1,2 @@
+Modulo Addition: (A + B) % P = ( (A % P) + (B % P) ) % P
+MOdulo Multiplication: (A * B) % P = ( (A % P) * (B % P) ) % P

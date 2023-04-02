@@ -1,0 +1,15 @@
+vec prime; 	  	// primes (1-1e7)
+ll fact[N] = {0}; 	// smallest prime divisor of i
+ll pri[N] = {0};  	//sieve of primes
+void sieve(ll n) {
+    for(ll i = 2; i <= n; i++){
+        if(fact[i] == 0){
+            fact[i] = i;
+            pri[i] = 1;
+            prime.push_back(i);
+            for(ll j = i*i; j <= n; j+=i){
+                if(fact[j] == 0) fact[j] = i;
+            }
+        }
+    }
+}

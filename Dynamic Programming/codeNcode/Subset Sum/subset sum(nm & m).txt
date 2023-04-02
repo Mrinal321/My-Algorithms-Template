@@ -1,0 +1,23 @@
+void solve(){
+    ll n, m; cin >> n >> m;
+    vector < ll > v(n+1);
+    for(ll i = 1; i <= n; i++) cin >> v[i];
+    
+    bool dp[m+1];
+    dp[0] = true;
+    for(ll i = 1; i <= m; i++) dp[i] = false;
+
+    for(ll i = 1; i <= n; i++){
+        ll val = v[i];
+        for(ll j = m; j >= val; j--){
+            dp[j] = dp[j-val]; 
+        }
+    }
+
+    for(ll j = 0; j <= m; j++) cout << dp[j] << " ";
+    ed
+
+    if(dp[m]) py
+    else pn
+
+}

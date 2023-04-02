@@ -1,0 +1,9 @@
+ll k, n, i, j; cin >> k >> n;
+    ll dp[n+1] = {0};
+    dp[0] = 1;
+    while(k--){
+        ll x; cin >> x;
+        rl(i,x,n){
+            if(dp[i-x]) dp[i] = 1;
+        }
+    }

@@ -1,0 +1,22 @@
+
+#include <bits/stdc++.h>
+#define ll long long int
+using namespace std;
+
+int gcd(int x, int y) {
+    while(1) {
+        int mod = x % y;
+        if(mod == 0)
+            return y;
+        x = y;
+        y = mod;
+    }
+}
+
+int main() {
+    int x, y;
+    cin >> x>> y;
+
+    int ans = gcd(x,y);
+    cout<<"GCD : " <<ans;
+}

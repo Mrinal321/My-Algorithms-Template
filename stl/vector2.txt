@@ -1,0 +1,4 @@
+// find element 
+auto it = find(myVector.begin(), myVector.end(), 10);
+    if(it == myVector.end())
+        cout<<"Not Found\n";

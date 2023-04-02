@@ -1,0 +1,27 @@
+void solve(){
+    ll n, m; cin >> n >> m;
+    ll ar[n+1][m+1];
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= m; j++) cin >> ar[i][j];
+    }
+
+    ll dp[n+2][m+2];
+    for(int i = 1; i <= n; i++) dp[i][m+1] = INF;
+    for(int i = 1; i <= m; i++) dp[n+1][i] = INF;
+    dp[n+1][m] = dp[n][m+1] = 0;
+
+    for(int i = n; i >= 1; i--){
+        for(int j = m; j >= 1; j--){
+            dp[i][j] = ar[i][j] + min(dp[i+1][j], dp[i][j+1]);
+        }
+    }
+
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= m; j++){
+            cout << dp[i][j] << " ";
+        }
+        ed
+    }
+
+    cout << "Min value :" << dp[1][1];
+}

@@ -1,0 +1,18 @@
+// list
+
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace std;
+
+int main() {
+    list < int > myList(2 , 7);
+    list < int > ::iterator it;
+
+    myList.push_back(10);
+    myList.push_back(15);
+    myList.push_front(5);
+
+    for(it = myList.begin(); it != myList.end(); it++) {
+        cout<< *it <<" ";
+    }
+}

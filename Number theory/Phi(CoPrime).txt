@@ -1,0 +1,15 @@
+const int N = 1e7+10;
+int phi[N];
+ll i, j;
+
+void phi_1_to_n(){
+    fr(i,1,N) phi[i] = i;
+
+    fr(i,2,N){
+        if(phi[i] == i){
+            for(j = i; j <= N; j+=i){
+                phi[j]-=phi[j]/i;
+            }
+        }
+    }
+}

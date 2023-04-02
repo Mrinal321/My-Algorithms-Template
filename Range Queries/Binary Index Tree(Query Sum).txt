@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+#define N 200005
+#define ll long long int
+ll ar[N];
+ll tree[N] = {0};
+
+ll read(ll inx){
+    ll sum = 0;
+    while(inx > 0){
+        sum += tree[inx];
+        inx -= (inx & -inx);
+    }
+    return sum;
+}
+
+void update(ll inx, ll val, ll n){
+    //cout << "Update: ";
+    while(inx <= n){
+        //cout << inx << " ";
+        tree[inx] += val;
+        inx += (inx & -inx);
+    } 
+    //cout << endl;
+}
+
+int main(){
+    ll n, qe, i; cin >> n >> qe;
+    for(i = 1; i <= n; i++){
+        cin >> ar[i];
+        update(i, ar[i], n);
+    }
+
+    while(qe--){
+        ll q; cin >> q;
+        if(q == 1){
+            ll inx, val; cin >> inx >> val;
+            ll add = val - ar[inx];
+            ar[inx] = val;
+            update(inx, add, n);
+        }
+        else{
+            ll fs, ls; cin >> fs >> ls;
+            cout << read(ls) - read(fs-1) << endl;
+        }
+    }
+}

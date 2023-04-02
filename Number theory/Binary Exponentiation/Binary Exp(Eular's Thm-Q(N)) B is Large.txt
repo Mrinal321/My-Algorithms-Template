@@ -1,0 +1,11 @@
+Euler tocent function
+number of coprime of N form 1 to N Q(N): n*(1-1/d1)*(1-1/d2)*(1-1/d3)...*(1-1/dm)
+where d(d1,d2,d3,,,dm) is divisors of N.
+
+if N is prime - coprime is N-1 (1,2,3,,,n-1)
+
+if find (a^b)%M and b is so large then use Eular's Theorem
+Q(N) is coprime of N form 1 to N
+(a^b)%M = (a^(b mod Q(M))%M
+if M if prime then Q(M) = M-1
+so (a^b)%M = (a^(b mod (M-1))%M

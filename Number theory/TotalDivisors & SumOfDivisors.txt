@@ -1,0 +1,75 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+set< int > s, prime;
+vector< int > fprime;
+
+void sieve(int n) {
+    prime.insert(2);
+    for(int i = 3; i <= n; i+=2) {
+
+        int pre = s.size();
+        s.insert(i);
+        int post = s.size();
+
+        if(pre != post) {
+            prime.insert(i);
+            for(int j = i*i; j <= n; j+=i) {
+                s.insert(j);
+            }
+        }
+    }
+}
+
+void primeFact(int n) {
+    sieve(n);
+    auto it = prime.begin();
+    while( (*it)*(*it) <= n) {
+        if(n % (*it) == 0)
+        {
+            fprime.push_back(*it);
+            n/=(*it);
+        }
+        else
+            it++;
+    }
+
+    if(n != 1)
+        fprime.push_back(n);
+}
+
+int main() {
+    int n;
+    cin >> n;
+    primeFact(n);
+
+    pair< int , int > dividor[fprime.size()];
+    int pri = 0, cunt = 0;
+    for(auto it = fprime.begin(); it != fprime.end(); it++) {
+        if(*it != *(it+1) || it+1 == fprime.end() ) {
+            dividor[pri].first = *it;
+            dividor[pri].second = cunt + 1;
+            pri++;
+            cunt = 0;
+        }
+        else
+        {
+            cunt++;
+        }
+    }
+
+    int divisors = 1;
+    int sumOfDivisors = 1;
+    for(int i = 0; i < pri; i++) {
+        divisors*=(dividor[i].second+1);
+        int r = dividor[i].first;
+        int n = dividor[i].second;
+        int sum = (pow(r, n+1) - 1) / (r-1);
+        sumOfDivisors*=sum;
+    }
+    cout<<"Total Divisors : "<< divisors<<endl;
+    cout<<"Sum of Divisors = " <<sumOfDivisors;
+
+}
+

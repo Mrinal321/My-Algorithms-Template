@@ -1,0 +1,30 @@
+ll InclusionExclusion (ll n, ll r) {
+    vector<ll> p;
+    for (ll i=2; i*i<=n; ++i)
+        if (n % i == 0) {
+            p.push_back (i);
+            while (n % i == 0)
+                n /= i;
+        }
+    if (n > 1)
+        p.push_back (n);
+
+    ll sum = 0;
+    for (ll msk=1; msk<(1<<p.size()); ++msk) {
+        ll mult = 1,
+            bits = 0;
+        for (ll i=0; i<(ll)p.size(); ++i)
+            if (msk & (1<<i)) {
+                ++bits;
+                mult *= p[i];
+            }
+
+        ll cur = r / mult;
+        if (bits % 2 == 1)
+            sum += cur;
+        else
+            sum -= cur;
+    }
+
+    return r - sum;
+}

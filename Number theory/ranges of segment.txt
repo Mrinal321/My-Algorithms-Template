@@ -1,0 +1,40 @@
+void solve(){
+    int n, i; cin >> n;
+    multimap < ll, ll > mp;
+    fr(i,1,n){
+        ll x, y; cin >> x >> y;
+        if(mp.empty()){
+            mp.insert({x,y}); continue;
+        }
+        auto u = mp.lower_bound(x);
+        ll mx = y, mn = x;
+        while(1){
+            if(u == mp.end()) u--;
+            if(u->first <= x){
+                if(u->second >= x){
+                    x = u->first;
+                    y = max(u->second,y);
+                    mp.erase(u);
+                }
+                break;
+            }
+            if(u == mp.begin()) break;
+            u--;
+        }
+        u = mp.lower_bound(x);
+        while(1){
+            if(u == mp.end()) break;
+            if(u->first <= y){
+                y = max(u->second,y);
+                auto uu = u;
+                u++;
+                mp.erase(uu); continue;
+            }
+            else break;
+        }
+        mp.insert({x,y});
+    }
+
+    cout << mp.size(); ed
+    for(auto u : mp) cout << u.first << " " << u.second << endl;
+}

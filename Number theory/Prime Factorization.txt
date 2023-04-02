@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+set< int > s, prime;
+vector< int > fprime;
+
+void sieve(int n) {
+    prime.insert(2);
+    for(int i = 3; i <= n; i+=2) {
+
+        int pre = s.size();
+        s.insert(i);
+        int post = s.size();
+
+        if(pre != post) {
+            prime.insert(i);
+            for(int j = i*i; j <= n; j+=i) {
+                s.insert(j);
+            }
+        }
+    }
+}
+
+void primeFact(int n) {
+    sieve(n);
+    auto it = prime.begin();
+    while( (*it)*(*it) <= n) {
+        if(n % (*it) == 0)
+        {
+            fprime.push_back(*it);
+            n/=(*it);
+        }
+        else
+            it++;
+    }
+
+    if(n != 1)
+        fprime.push_back(n);
+}
+
+int main() {
+    int n;
+    cin >> n;
+    primeFact(n);
+
+    for(auto it = fprime.begin(); it != fprime.end(); it++) {
+        cout<<*it<<" ";
+    }
+}

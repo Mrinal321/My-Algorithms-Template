@@ -1,0 +1,29 @@
+// add array elements
+int a[] = {1,2,3,4,5};
+list < int > myList(a, a+5); // add array elements
+
+// initialijation 2 of 5 elements
+list < int > myList(5, 2); 
+
+// add anywhere
+it = myList.begin();
+it++;
+myList.insert(it,7); // 2 number index add 7
+
+// find require number index
+it = find(myList.begin(), myList.end(), 1);
+myList.insert(it, 7);
+
+// find the number have or not
+it = find(myList.begin(), myList.end(), 10);
+    if(it == myList.end()) {
+        cout<<"Number Not Found";
+    }
+    else {
+        cout<<"Number Found";
+    }
+
+// erase 6
+it = find(myList.begin(), myList.end(), 6);
+    myList.erase(it);
+

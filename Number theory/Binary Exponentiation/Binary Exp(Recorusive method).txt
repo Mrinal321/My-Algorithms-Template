@@ -1,0 +1,12 @@
+ll binaryExpRecursive(ll a, ll b){
+    if(b == 0) return 1;
+
+    ll res = binaryExpRecursive(a, b/2);
+    if(b&1){
+        return ( a* ( (res * res) % M )) % M;
+    }
+    else{
+        return (res * res) % M;
+    }
+
+}

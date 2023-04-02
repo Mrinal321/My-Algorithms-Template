@@ -1,0 +1,39 @@
+
+
+//Speed up
+#define Code ios_base::sync_with_stdio(false);
+#define With cin.tie(NULL);
+#define Mrinal cout.tie(NULL);
+
+//Aliases
+using ll= long long;
+using ld= long double;
+using ul= unsigned long long;
+
+//Constants
+const ld pi = 3.141592653589793228;
+const ll INF = __LONG_LONG_MAX__;
+const ll mod = 1e9 + 7;
+const ll N = 1e5 + 5;
+
+//TypeDEF
+typedef pair < ll, ll > pir;
+typedef vector < ll > vec;
+typedef vector < pir > vPir;
+typedef map < ll, ll > mp;
+
+//Macros
+#define ff first
+#define ss second
+#define tr true
+#define fl false
+#define pb push_back
+#define fl(i,n) for(int i = 0; i < n; i++)
+#define rl(i,m,n) for(int i = n; i >= m; i--)
+#define py cout << "YES\n";
+#define pm cout << "-1\n";
+#define pn cout << "NO\n";
+#define endl "\n"
+#define vr(v) v.begin(),v.end();
+#define rv(v) v.end(),v.begin()
+

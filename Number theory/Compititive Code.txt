@@ -1,0 +1,38 @@
+//1. 1 to n prime number
+#define M 1000000
+bool marked[M] = {false};
+set< ll > s;
+
+void sieve(int n){
+    for(int i = 3; i <= n; i+=2) {
+
+        ll pre = s.size();
+        s.insert(i);
+        ll post = s.size();
+
+        if(pre != post) {
+            marked[i] = true;
+            for(int j = i*i; j <= n; j+=i) {
+                s.insert(j);
+            }
+        }
+    }
+
+}
+
+int main()
+{
+    ll n;
+    cin >> n;
+
+    marked[2] = true;
+
+    sieve(n);
+
+    for(int i = 1; i <= n; i++) {
+        if(marked[i])
+            cout<<i <<" is prime\n";
+    }
+}
+
+

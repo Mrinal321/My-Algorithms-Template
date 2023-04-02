@@ -1,0 +1,57 @@
+#include<bits/stdc++.h>
+
+//Macros
+#define FIO                     ios::sync_with_stdio(false); cin.tie(nullptr); cout.tie(NULL);
+#define TC(t)                   int t; cin >> t; for(int i = 1; i <= t; i++)
+#define ll                      long long int
+#define ull                     unsigned long long int
+#define lld                     long double
+#define vl                      vector<ll>
+#define pll                     pair<ll,ll>
+#define vpll                    vector<pll>
+#define uni(x)                  x.erase(unique(all(x)), x.end())
+#define ordered_set             tree<ll, null_type, less<ll>, rb_tree_tag, tree_order_statistics_node_update>
+#define multi_ordered_set       tree<ll, null_type, less_equal<ll>, rb_tree_tag, tree_order_statistics_node_update>
+#define mxheap                  priority_queue<ll>
+#define mnheap                  priority_queue<ll, vector<ll>, greater<ll>>
+#define mxheap2                 priority_queue<pair<ll,ll>>
+#define mnheap2                 priority_queue<pair<ll,ll>, vector<pair<ll,ll>>, greater<pair<ll,ll>>>
+#define loop(i, a, b)           for(ll i = a; i <= b; i++)
+#define loop2(i, b, a)          for(ll i = b; i >= a; i--)
+#define pb                      push_back
+#define ppb                     pop_back
+#define mp                      make_pair
+#define ff                      first
+#define ss                      second
+#define pm                      cout << "-1\n";
+#define pn                      cout << "NO\n";
+#define py                      cout << "YES\n";
+#define ed                      cout << "\n";
+#define vr(v)                   v.begin(),v.end();
+#define rv(v)                   v.end(),v.begin();
+#define vrev(v)                 reverse(v.begin(),v.end());
+#define vsort(v)                sort(v.begin(),v.end());
+#define vlowerB(v,x)            lower_bound(v.begin(), v.end(), x); 
+// lower bound returns if x is found that or its immediat large iterator
+#define vupperB(v,x)            upper_bound(v.begin(), v.end(), x); 
+// upper bound returns its immediat large iterator
+ 
+//Constants
+const ld pi = 3.141592653589793228;
+const ll INF = __LONG_LONG_MAX__;
+const ll M = 1e9+7;
+const ll N = 2e5 + 5;
+
+using namespace std;
+
+void solve(){
+    
+}
+
+int main()
+{
+    FIO
+    TC(t) solve();
+    return 0;
+
+}

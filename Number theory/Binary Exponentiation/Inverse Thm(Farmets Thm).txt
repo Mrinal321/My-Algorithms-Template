@@ -1,0 +1,6 @@
+if M is prime
+A^(M-1) = 1 mod M
+so A^(M-2) = (A^-1) mod M
+
+so (a/b)mod M = (a mod M) * ((b^-1) mod M)
+   (a/b) mod M = (a mod M ) * ( A^(M-2) mod M)

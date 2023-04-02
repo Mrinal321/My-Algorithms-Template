@@ -1,0 +1,7 @@
+
+string s=to_string(n); // convert int array to string
+
+cin.ignore(); // to proper use for getline
+getline(cin, str); //get sentance
+
+str.find(str2, pos); //find the substring of str from pos

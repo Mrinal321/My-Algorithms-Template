@@ -1,0 +1,43 @@
+void solve(){
+    ll n; cin >> n;
+    string st; cin >> st;
+    st.insert(st.begin(), '0');
+    
+    bool dp[n+1][n+1];
+    for(int i = 0; i <= n; i++){
+        for(int j = 0; j <= n; j++) dp[i][j] = 0;
+    }
+    for(int i = 0; i <= n; i++) dp[0][i] = dp[1][i] = 1;
+    
+    for(int i = 2; i <= n; i++){
+        for(int j = i; j <= n; j++){
+            if(st[j] == st[j - i + 1] && dp[i-2][j-1] == 1) dp[i][j] = 1;
+            else dp[i][j] = 0;
+        }
+    }
+
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= n; j++){
+            cout << dp[i][j];
+        }
+        ed
+    }
+    
+    for(int i = n; i >= 1; i--){
+        bool yes = false;
+        for(int j = n; j >= i; j--){
+            if(dp[i][j]){
+                int k = j, tmp = i;
+                //cout << i << " " << j << endl;
+                while(tmp--){
+                    cout << st[k];
+                    k--;
+                }
+                yes = true;
+                break;
+            }
+        }
+        if(yes) break;
+    }
+
+}
